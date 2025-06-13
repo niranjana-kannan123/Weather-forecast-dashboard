@@ -14,7 +14,7 @@ def get_data(place, days, kind):
         temperature = []
         date = []
         for i in range(8*days):
-            temperature.append(content["list"][i]["main"]["temp"])
+            temperature.append(content["list"][i]["main"]["temp"]/10)
             date.append(content["list"][i]["dt_txt"])
 
         return temperature, date
@@ -24,7 +24,7 @@ def get_data(place, days, kind):
         date = []
 
         for i in range(8*days):
-            sky.append(content["list"][i]["weather"][0]["description"])
+            sky.append(content["list"][i]["weather"][0]["main"])
             date.append(content["list"][i]["dt_txt"])
 
         return sky, date
